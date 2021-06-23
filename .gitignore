@@ -1,0 +1,17 @@
+/Desarrollo/CD_Back/node_modules
+/Desarrollo/CD_Back/public/hot
+/Desarrollo/CD_Back/public/storage
+/Desarrollo/CD_Back/storage/*.key
+/Desarrollo/CD_Back/vendor
+/Desarrollo/CD_Back/.env
+/Desarrollo/CD_Back/.env.backup
+/Desarrollo/CD_Back/.phpunit.result.cache
+/Desarrollo/CD_Back/docker-compose.override.yml
+/Desarrollo/CD_Back/Homestead.json
+/Desarrollo/CD_Back/Homestead.yaml
+/Desarrollo/CD_Back/npm-debug.log
+/Desarrollo/CD_Back/yarn-error.log
+/Desarrollo/CD_Back/.idea
+/Desarrollo/CD_Back/.vscode
+.idea
+.vscode
