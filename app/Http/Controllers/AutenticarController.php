@@ -28,10 +28,7 @@ class AutenticarController extends Controller
         $user->save();
 
         return response()->json([
-            'res' => true,
-            'msg' => 'Usuario registrado correctamente',
-            'users' => $user,
-            'personas' => $persona
+            'message' => 'Usuario registrado correctamente'
         ], 200);
     }
 
@@ -41,13 +38,14 @@ class AutenticarController extends Controller
 
         if (!$user || !Hash::check($request->password, $user->password)){
             throw ValidationException::withMessages([
-                'message' => ['Invalid login or password.'],
+                'message' => ['Clave o usuario inválido'],
             ]);
         }
 
         $token = $user->createToken($request->username)->plainTextToken;
 
         return response()->json([
+            'message' => 'Inicio de sesion con exito',
             'token' => $token
         ], 200);
     }
@@ -56,8 +54,7 @@ class AutenticarController extends Controller
     {
         $request->user()->currentAccessToken()->delete();
         return response()->json([
-            'message' => 'token delete successful',
-            'data' => $request->user()
+            'message' => 'cesion cerrada con exito',
         ], 200);
     }
 }
