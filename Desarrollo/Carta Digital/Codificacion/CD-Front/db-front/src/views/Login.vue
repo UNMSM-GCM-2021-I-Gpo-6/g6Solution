@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <img src="" class="login__logo" />
+    <img src="@/assets/logo.png" class="login__logo" />
     <div class="field">
       <label class="label">Usuario</label>
       <div class="control has-icons-left">
@@ -88,7 +88,7 @@ export default {
   flex-direction: column;
   align-items: center;
   &__logo {
-    height: 9rem;
+    height: 4rem;
     margin-bottom: 1.5rem;
   }
 }
