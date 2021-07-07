@@ -1,0 +1,1 @@
+web: vendor/bin/heroku-php-apache2 /Desarrollo/Carta Digital/Codificacion/CD_Back/public/

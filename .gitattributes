@@ -1,0 +1,5 @@
+/Desarrollo/CD_Back/* text=auto
+/Desarrollo/CD_Back/*.css linguist-vendored
+/Desarrollo/CD_Back/*.scss linguist-vendored
+/Desarrollo/CD_Back/*.js linguist-vendored
+/Desarrollo/CD_Back/CHANGELOG.md export-ignore
