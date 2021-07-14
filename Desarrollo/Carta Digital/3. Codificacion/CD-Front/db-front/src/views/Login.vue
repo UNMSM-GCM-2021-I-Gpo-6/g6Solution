@@ -71,7 +71,7 @@ export default {
       this.loginUser(this.user)
         .then(() => {
           this.loading = false
-          // this.$router.push('/daymenu')
+          this.$router.push('/daymenu')
           // this.$router.go()
         })
         .catch((e) => {
