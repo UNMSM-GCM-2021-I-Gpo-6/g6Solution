@@ -12,11 +12,7 @@ export const mutations = {
       ...notification,
       id: nextId++
     })
-<<<<<<< HEAD
   },  
-=======
-  },
->>>>>>> master
   DELETE(state, notificationToRemove) {
     state.notifications = state.notifications.filter(
       notification => notification.id !== notificationToRemove.id
