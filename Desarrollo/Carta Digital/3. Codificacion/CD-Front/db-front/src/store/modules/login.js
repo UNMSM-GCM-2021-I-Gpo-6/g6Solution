@@ -20,14 +20,14 @@ export const actions = {
       .loginUser(payload)
       .then((r) => {
         console.log(r);
-        // commit('SET_TOKEN', r.data.token)
-        // localStorage.setItem('jwt', r.data.token)
-        // const notification = {
-        //   type: 'success',
-        //   message: `Bienvenido ${payload.username.charAt(0).toUpperCase() +
-        //     payload.username.slice(1)}!`
-        // }
-        // dispatch('notification/add', notification, { root: true })
+        commit('SET_TOKEN', r.data.token)
+        localStorage.setItem('jwt', r.data.token)
+        const notification = {
+          type: 'success',
+          message: `Bienvenido ${payload.username.charAt(0).toUpperCase() +
+            payload.username.slice(1)}!`
+        }
+        dispatch('notification/add', notification, { root: true })
       })
       .catch(error => {
         console.log(error)
