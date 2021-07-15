@@ -18,7 +18,8 @@ export const actions = {
   loginUser({ commit, dispatch }, payload) {
     return api
       .loginUser(payload)
-      .then(r => {
+      .then((r) => {
+        console.log(r);
         commit('SET_TOKEN', r.data.token)
         localStorage.setItem('jwt', r.data.token)
         const notification = {

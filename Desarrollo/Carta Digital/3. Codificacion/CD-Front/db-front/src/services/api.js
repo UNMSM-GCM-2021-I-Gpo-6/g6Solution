@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: process.env.VUE_APP_API_URI,
+  baseURL: 'https://app-food-api.herokuapp.com/api',
   withCredentials: false, //This is the default
   headers: {
     Accept: 'application/json',
@@ -24,6 +24,6 @@ const apiClient = axios.create({
 export default {
   //logueo
   loginUser(data) {
-    return apiClient.post('/signin', data)
+    return apiClient.post('/login', data)
   }
 }
