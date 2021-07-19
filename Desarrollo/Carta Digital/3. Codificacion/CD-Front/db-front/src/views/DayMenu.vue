@@ -1,5 +1,5 @@
 <template>
-  <div>MENU DEL DÍA!!</div>
+  <div>MENU DEL DÍA</div>
 </template>
 
 <script>
