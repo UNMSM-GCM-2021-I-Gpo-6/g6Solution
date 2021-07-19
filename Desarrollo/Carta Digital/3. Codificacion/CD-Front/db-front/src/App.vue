@@ -3,6 +3,7 @@
     <NotificationContainer />
     <section class="section">
       <div class="container" :class="{ columns: isLogged }">
+        <!-- commit de prueba -->
         <!-- <MenuBar v-if="isLogged" class="column is-one-quarter" /> -->
         <router-view :class="{ column: isLogged }" />
       </div>
