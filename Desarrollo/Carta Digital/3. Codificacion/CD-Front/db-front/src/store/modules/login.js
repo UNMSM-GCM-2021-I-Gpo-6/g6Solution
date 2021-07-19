@@ -38,5 +38,27 @@ export const actions = {
         dispatch('notification/add', notification, { root: true })
         throw error
       })
+  },
+
+  registerUser({ dispatch }, payload) {
+    return api
+      .registerUser(payload)
+      .then((r) => {
+        console.log(r);
+        const notification = {
+          type: 'success',
+          message: `${r.data.message}`
+        }
+        dispatch('notification/add', notification, { root: true })
+      })
+      .catch(error => {
+        console.log(error);
+        const notification = {
+          type: 'danger',
+          message: 'A ocurrido un error al registrar usuario: ' + error.message
+        }
+        dispatch('notification/add', notification, { root: true })
+        throw error
+      })
   }
 }

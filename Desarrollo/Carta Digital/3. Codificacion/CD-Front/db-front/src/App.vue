@@ -36,6 +36,8 @@ export default {
 </script>
 
 <style lang="scss">
+$primary: #ca9e66;
+
 @import 'bulma/bulma.sass';
 .svg-inline {
   height: 1em;
