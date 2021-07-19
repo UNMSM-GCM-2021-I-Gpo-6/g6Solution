@@ -15,7 +15,7 @@
 /Desarrollo/Carta Digital/Codificacion/CD_Back/.vscode
 
 .DS_Store
-node_modules
+node_modules/
 /dist
 
 # local env files
