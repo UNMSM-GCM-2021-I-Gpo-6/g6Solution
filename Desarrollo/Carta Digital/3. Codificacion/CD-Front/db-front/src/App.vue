@@ -4,7 +4,7 @@
     <section class="section">
       <div class="container" :class="{ columns: isLogged }">
         <!-- commit de prueba -->
-        <!-- <MenuBar v-if="isLogged" class="column is-one-quarter" /> -->
+        <MenuBar v-if="isLogged" class="column is-one-quarter" />
         <router-view :class="{ column: isLogged }" />
       </div>
     </section>
@@ -13,12 +13,12 @@
 
 <script>
 import { mapState } from 'vuex'
-// import MenuBar from '@/components/MenuBar'
+import MenuBar from '@/components/MenuBar'
 import NotificationContainer from '@/components/NotificationContainer'
 
 export default {
   components: {
-    // MenuBar,
+    MenuBar,
     NotificationContainer,
   },
   data() {
@@ -29,7 +29,7 @@ export default {
       token: (state) => state.login.token,
     }),
     isLogged() {
-      return localStorage.getItem('jwt') || this.token
+      return this.token
     },
   },
 }

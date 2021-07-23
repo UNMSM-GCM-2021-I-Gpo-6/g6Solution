@@ -3,7 +3,7 @@ import api from '@/services/api'
 export const namespaced = true
 
 export const state = {
-  token: false
+  token: false || localStorage.getItem('jwt')
 }
 
 export const getters = {}
@@ -38,6 +38,17 @@ export const actions = {
         dispatch('notification/add', notification, { root: true })
         throw error
       })
+  },
+
+  logoutUser({ commit, dispatch }) {
+    commit('SET_TOKEN', false)
+    localStorage.clear()
+    localStorage.removeItem('jwt')
+    const notification = {
+      type: 'success',
+      message: 'Cierre de sesión exitosa'
+    }
+    dispatch('notification/add', notification, { root: true })
   },
 
   registerUser({ dispatch }, payload) {

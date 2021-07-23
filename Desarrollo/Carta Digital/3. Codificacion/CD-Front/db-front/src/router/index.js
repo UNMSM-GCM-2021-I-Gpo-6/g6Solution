@@ -66,4 +66,19 @@ const router = new VueRouter({
   routes
 })
 
+
+router.beforeEach((to, from, next) => {
+  const rutaProtegida = to.matched.some(record => record.meta.requiresAuth)
+
+  if (rutaProtegida) {
+    if (localStorage.getItem('jwt')) next()
+    else next({ name: 'login' })
+  } else {
+    if (localStorage.getItem('jwt') && to.name == 'login')
+      next({ name: 'daymenu' })
+    else next()
+  }
+})
+
+
 export default router
