@@ -25,5 +25,9 @@ export default {
   //logueo
   loginUser(data) {
     return apiClient.post('/login', data)
+  },
+  //registro
+  registerUser(data) {
+    return apiClient.post('/signup', data)
   }
 }
