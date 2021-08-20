@@ -2,7 +2,13 @@
   <aside class="menu">
     <p class="menu-label">Administración</p>
     <ul class="menu-list">
-      <li><router-link to="/">Promociones</router-link></li>
+      <li>
+        <router-link
+          :to="{ name: 'promo' }"
+          :class="{ 'is-active': isActive('promo') }"
+          >Promociones</router-link
+        >
+      </li>
       <!-- <li
         ><router-link
           :to="{ name: 'categories' }"
@@ -19,19 +25,51 @@
       > -->
       <!--  -->
       <li>
-        <router-link to="/">Carta</router-link>
+        <router-link :to="{ name: 'carta' }">Carta</router-link>
         <ul>
-          <li><router-link to="/">Categorías</router-link></li>
-          <li><router-link to="/">Platos</router-link></li>
+          <li>
+            <router-link
+              :to="{ name: 'categories' }"
+              :class="{ 'is-active': isActive('categories') }"
+              >Categorías</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'carta' }"
+              :class="{ 'is-active': isActive('carta') }"
+              >Platos</router-link
+            >
+          </li>
         </ul>
       </li>
       <!--  -->
       <li>
-        <router-link to="/">Menú</router-link>
+        <router-link :to="{ name: 'daymenu' }">Menú</router-link>
         <ul>
-          <li><router-link to="/">Programación</router-link></li>
-          <li><router-link to="/">Menúes</router-link></li>
+          <li>
+            <router-link
+              :to="{ name: 'daymenu' }"
+              :class="{ 'is-active': isActive('daymenu') }"
+              >Programación</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'menues' }"
+              :class="{ 'is-active': isActive('menues') }"
+              >Menúes</router-link
+            >
+          </li>
         </ul>
+      </li>
+      <!-- registrar usuarios -->
+      <li>
+        <router-link
+          :to="{ name: 'register' }"
+          :class="{ 'is-active': isActive('register') }"
+          >Registrar usuario</router-link
+        >
       </li>
       <!-- salir del sistema -->
       <li>
@@ -53,6 +91,9 @@ export default {
     ...mapActions({
       logoutUser: 'login/logoutUser',
     }),
+    isActive(value) {
+      return this.$route.name == value
+    },
     logout() {
       this.logoutUser()
       this.$router.push('/')
