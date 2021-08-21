@@ -25,3 +25,6 @@ Route::post('/login', [\App\Http\Controllers\AutenticarController::class, 'login
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [\App\Http\Controllers\AutenticarController::class, 'logout']);
 });
+
+Route::apiResource('/categorias', \App\Http\Controllers\Categorias\CategoriaController::class)->except('update');
+// Route::get('categoria/{categoria}', [\App\Http\Controllers\Categorias\CategoriaController::class, 'show']);

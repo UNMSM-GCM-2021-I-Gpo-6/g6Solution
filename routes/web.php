@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/stoage-link', function (){
+    // \Illuminate\Support\Facades\Artisan::call('storage:link');
+    if (file_exists(public_path('storage'))) {
+        return 'The "public/storage" directory already exist';
+    }
+
+    app('files')->link(
+        storage_path('app/public'), public_path('storage')
+    );
+
+    return 'The [public/storage] directory has been linked';
+});
