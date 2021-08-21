@@ -101,7 +101,7 @@ class CategoriaController extends Controller
         Storage::delete('public/categorias/'.$nameFile);
 
         return response()->json([
-            'message' => 'Colegio eliminado'
+            'message' => 'Categoria Eliminada Correctamente'
         ]);
     }
 }
