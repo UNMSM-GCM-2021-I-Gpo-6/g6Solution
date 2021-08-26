@@ -6,6 +6,7 @@ import Categories from '@/views/Categories'
 import DayMenu from '@/views/DayMenu'
 import Menues from '@/views/Menues'
 import Promo from '@/views/Promo'
+import Registro from '@/views/Registro'
 
 import Login from '@/views/Login'
 
@@ -15,60 +16,66 @@ const routes = [
   {
     path: '/',
     name: 'login',
-    component: Login
+    component: Login,
   },
   {
     path: '/daymenu',
     name: 'daymenu',
     component: DayMenu,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: '/carta',
     name: 'carta',
     component: Carta,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: '/categories',
     name: 'categories',
     component: Categories,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: '/menues',
     name: 'menues',
     component: Menues,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: '/promo',
     name: 'promo',
     component: Promo,
     meta: {
-      requiresAuth: true
-    }
-  }
-
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Registro,
+    meta: {
+      requiresAuth: true,
+    },
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
-
 router.beforeEach((to, from, next) => {
-  const rutaProtegida = to.matched.some(record => record.meta.requiresAuth)
+  const rutaProtegida = to.matched.some((record) => record.meta.requiresAuth)
 
   if (rutaProtegida) {
     if (localStorage.getItem('jwt')) next()
@@ -79,6 +86,5 @@ router.beforeEach((to, from, next) => {
     else next()
   }
 })
-
 
 export default router

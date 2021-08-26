@@ -1,9 +1,9 @@
 <template>
   <div class="login">
     <img src="@/assets/logo.png" class="login__logo" />
-    <div class="field has-text-primary mt-3">{{ cptUserTitle }}</div>
+    <div class="field has-text-primary mt-3">INICIAR SESIÓN</div>
 
-    <template v-if="!isUser">
+    <!-- <template v-if="!isUser">
       <div class="field">
         <label class="label">Nombres</label>
         <div class="control has-icons-left">
@@ -33,7 +33,7 @@
           </span>
         </div>
       </div>
-    </template>
+    </template> -->
 
     <div class="field">
       <label class="label">Usuario</label>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="field">
+    <!-- <div class="field">
       <p v-if="isUser" class="is-size-7 has-text-grey">
         ¿No tiene una cuenta?
         <span class="has-text-primary is-clickable" @click="isUser = !isUser"
@@ -78,7 +78,7 @@
           >Ingrese aquí</span
         >
       </p>
-    </div>
+    </div> -->
 
     <div class="field mt-3">
       <p class="control">
@@ -87,7 +87,7 @@
           :class="{ 'is-loading': loading }"
           @click="login()"
         >
-          {{ cptBtnTxt }}
+          Ingresar
         </button>
       </p>
     </div>
@@ -107,55 +107,57 @@ export default {
       user: {
         username: '',
         password: '',
-        nombre: '',
-        apellido: '',
+        // nombre: '',
+        // apellido: '',
       },
       loading: false,
-      isUser: true,
+      // isUser: true,
     }
   },
-  watch: {
-    isUser() {
-      this.user.username = ''
-      this.user.password = ''
-      this.user.nombre = ''
-      this.user.apellido = ''
-    },
-  },
+  // watch: {
+  //   isUser() {
+  //     this.user.username = ''
+  //     this.user.password = ''
+  //     this.user.nombre = ''
+  //     this.user.apellido = ''
+  //   },
+  // },
   computed: {
-    cptUserTitle() {
-      return this.isUser ? 'INICIAR SESIÓN' : 'REGISTRAR USUARIO'
-    },
-    cptBtnTxt() {
-      return this.isUser ? 'Ingresar' : 'Registrar'
-    },
+    // cptUserTitle() {
+    //   return this.isUser ? 'INICIAR SESIÓN' : 'REGISTRAR USUARIO'
+    // },
+    // cptBtnTxt() {
+    //   return this.isUser ? 'Ingresar' : 'Registrar'
+    // },
   },
   methods: {
     ...mapActions({
       loginUser: 'login/loginUser',
-      registerUser: 'login/registerUser',
+      // registerUser: 'login/registerUser',
     }),
     login() {
       this.loading = true
-      if (this.isUser)
-        this.loginUser(this.user)
-          .then(() => {
-            this.loading = false
-            this.$router.push('/daymenu')
-            // this.$router.go()
-          })
-          .catch((e) => {
-            console.log(e)
-          })
-      else
-        this.registerUser(this.user)
-          .then(() => {
-            this.loading = false
-            this.isUser = !this.isUser
-          })
-          .catch((e) => {
-            console.log(e)
-          })
+      console.log('loading')
+      // if (this.isUser)
+      this.loginUser(this.user)
+        .then(() => {
+          this.loading = false
+          this.$router.push('/daymenu')
+          // this.$router.go()
+        })
+        .catch((e) => {
+          console.log(e)
+          this.loading = false
+        })
+      // else
+      //   this.registerUser(this.user)
+      //     .then(() => {
+      //       this.loading = false
+      //       this.isUser = !this.isUser
+      //     })
+      //     .catch((e) => {
+      //       console.log(e)
+      //     })
     },
   },
 }
