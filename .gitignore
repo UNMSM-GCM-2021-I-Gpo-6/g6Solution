@@ -1,17 +1,39 @@
-/Desarrollo/CD_Back/node_modules
-/Desarrollo/CD_Back/public/hot
-/Desarrollo/CD_Back/public/storage
-/Desarrollo/CD_Back/storage/*.key
-/Desarrollo/CD_Back/vendor
-/Desarrollo/CD_Back/.env
-/Desarrollo/CD_Back/.env.backup
-/Desarrollo/CD_Back/.phpunit.result.cache
-/Desarrollo/CD_Back/docker-compose.override.yml
-/Desarrollo/CD_Back/Homestead.json
-/Desarrollo/CD_Back/Homestead.yaml
-/Desarrollo/CD_Back/npm-debug.log
-/Desarrollo/CD_Back/yarn-error.log
-/Desarrollo/CD_Back/.idea
-/Desarrollo/CD_Back/.vscode
+/Desarrollo/Carta Digital/Codificacion/CD_Back/node_modules
+/Desarrollo/Carta Digital/Codificacion/CD_Back/public/hot
+/Desarrollo/Carta Digital/Codificacion/CD_Back/public/storage
+/Desarrollo/Carta Digital/Codificacion/CD_Back/storage/*.key
+/Desarrollo/Carta Digital/Codificacion/CD_Back/vendor
+/Desarrollo/Carta Digital/Codificacion/CD_Back/.env
+/Desarrollo/Carta Digital/Codificacion/CD_Back/.env.backup
+/Desarrollo/Carta Digital/Codificacion/CD_Back/.phpunit.result.cache
+/Desarrollo/Carta Digital/Codificacion/CD_Back/docker-compose.override.yml
+/Desarrollo/Carta Digital/Codificacion/CD_Back/Homestead.json
+/Desarrollo/Carta Digital/Codificacion/CD_Back/Homestead.yaml
+/Desarrollo/Carta Digital/Codificacion/CD_Back/npm-debug.log
+/Desarrollo/Carta Digital/Codificacion/CD_Back/yarn-error.log
+/Desarrollo/Carta Digital/Codificacion/CD_Back/.idea
+/Desarrollo/Carta Digital/Codificacion/CD_Back/.vscode
+
+.DS_Store
+node_modules/
+/dist
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
 .idea
 .vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
